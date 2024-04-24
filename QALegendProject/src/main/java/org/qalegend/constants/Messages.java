@@ -8,4 +8,6 @@ public class Messages
 	public static final String USERLOGIN_MESSAGES = "Invalid email id";
 	public static final String LOGIN_FAILED_WARNINGMESSAGES_NOTFOUND = "Warning messages not found";
 	public static final String LOGIN_DATE_FAILED = "Login date verification failed";
+	public static final String MISMAICH_WEBTABLE_DETAILS = "Mismatch in webtable details";
+	public static final String RE_LOGIN_FAILED = "Re_Login failed";
 }

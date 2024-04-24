@@ -2,24 +2,31 @@
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-21T09:59:19 IST" name="Default suite" finished-at="2024-04-21T09:59:42 IST" duration-ms="23252">
+  <suite started-at="2024-04-24T22:39:37 IST" name="Default suite" finished-at="2024-04-24T22:40:07 IST" duration-ms="30195">
     <groups>
     </groups>
-    <test started-at="2024-04-21T09:59:19 IST" name="Default test" finished-at="2024-04-21T09:59:42 IST" duration-ms="23252">
-      <class name="test.LoginPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.LoginPageTest@71809907]" started-at="2024-04-21T09:59:19 IST" name="setUp" finished-at="2024-04-21T09:59:37 IST" duration-ms="17818" status="PASS">
+    <test started-at="2024-04-24T22:39:37 IST" name="Default test" finished-at="2024-04-24T22:40:07 IST" duration-ms="30195">
+      <class name="test.AddUserPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.AddUserPageTest@3ce1e309]" started-at="2024-04-24T22:39:37 IST" name="setUp" finished-at="2024-04-24T22:39:50 IST" duration-ms="13430" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyUserLoginWithValidCredentials()[pri:0, instance:test.LoginPageTest@71809907]" started-at="2024-04-21T09:59:37 IST" name="verifyUserLoginWithValidCredentials" finished-at="2024-04-21T09:59:42 IST" duration-ms="5141" status="PASS">
+        <test-method signature="verifyUserLoginWithNewlyAddedUsers()[pri:0, instance:test.AddUserPageTest@3ce1e309]" started-at="2024-04-24T22:39:50 IST" name="verifyUserLoginWithNewlyAddedUsers" finished-at="2024-04-24T22:40:07 IST" duration-ms="16545" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserLoginWithValidCredentials -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:test.LoginPageTest@71809907]" started-at="2024-04-21T09:59:42 IST" name="closeBrowser" finished-at="2024-04-21T09:59:42 IST" duration-ms="261" status="PASS">
+        </test-method> <!-- verifyUserLoginWithNewlyAddedUsers -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test.AddUserPageTest@3ce1e309]" started-at="2024-04-24T22:40:07 IST" name="closeBrowser" finished-at="2024-04-24T22:40:07 IST" duration-ms="182" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserLoginWithNewlyAddedUsers status=SUCCESS method=AddUserPageTest.verifyUserLoginWithNewlyAddedUsers()[pri:0, instance:test.AddUserPageTest@3ce1e309] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- test.LoginPageTest -->
+      </class> <!-- test.AddUserPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

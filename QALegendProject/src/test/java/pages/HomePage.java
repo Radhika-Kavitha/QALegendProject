@@ -19,6 +19,15 @@ public class HomePage
 	WebElement home_Name;
 	@FindBy(xpath = "//div[@class='m-8 pull-left mt-15 hidden-xs']")
 	WebElement login_Date;
+	@FindBy(xpath = "//span[text()='User Management']")
+	WebElement user_Management_dropdownButton;
+	@FindBy(xpath = "/html/body/div[2]/aside/section/ul/li[2]/ul/li[1]/a")
+	WebElement user;
+	@FindBy(xpath = "//button[@class='btn btn-default btn-sm']")
+	WebElement application_Tour;
+	@FindBy(xpath = "//section[@class='content-header']")
+	WebElement welcome_name;
+	
 	public String getHomeName()
 	{
 		String text = WebElementUtilities.getText(home_Name);
@@ -33,5 +42,23 @@ public class HomePage
 	{
 		String current_date = DateUtility.getUserLoginDate("dd-MM-YYYY");
 		return current_date;
+	}
+	public void clickOnEndTourButton()
+	{
+		WebElementUtilities.clickOnElement(application_Tour);
+	}
+	public void clickOnUserManagementButton()
+	{
+		WebElementUtilities.clickOnElement(user_Management_dropdownButton);
+	}
+	public UsersPage clickOnUserButton()
+	{
+		WebElementUtilities.clickOnElement(user);
+		return new UsersPage(driver);
+	}
+	public String getUserName()
+	{
+		String login_name = WebElementUtilities.getText(welcome_name);
+		return login_name;
 	}
 }
