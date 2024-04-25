@@ -20,7 +20,7 @@ public class LoginPageTest extends Base
 	{
 		String actualTitle = driver.getTitle();
 		System.out.println(actualTitle);
-		String expectedTitle = ExcelUtility.stringDataRead(0, 0, Constants.LOGIN_PAGE_DATA)+"ert";
+		String expectedTitle = ExcelUtility.stringDataRead(0, 0, Constants.LOGIN_PAGE_DATA);
 		Assert.assertEquals(actualTitle, expectedTitle, Messages.TITLE_MESSAGES);
 	}
 	
