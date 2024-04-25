@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import pages.AddUserPage;
 import pages.HomePage;
 import pages.LoginPage;
+import pages.UserManagementPage;
 import pages.UsersPage;
 
 public class AddUserPageTest extends Base
@@ -28,11 +29,13 @@ public class AddUserPageTest extends Base
 		loginObj.enterPassword(password);
 		HomePage home = loginObj.clickOnLoginButton();
 		HomePage homeObj = new HomePage(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		homeObj.clickOnEndTourButton();
-		homeObj.clickOnUserManagementButton();
-		UsersPage user_manage_page = homeObj.clickOnUserButton();
-		UsersPage userManageObj = new UsersPage(driver);
-		AddUserPage add_user_page = userManageObj.clickOnAddUserButton();
+		UserManagementPage user_manage = homeObj.clickOnUserManagementButton();
+		UserManagementPage user_ManagementObj = new UserManagementPage(driver);
+		UsersPage users_page = user_ManagementObj.clickOnUserButton();
+		UsersPage usersObj = new UsersPage(driver);
+		AddUserPage add_user_page = usersObj.clickOnAddUserButton();
 		String actual_Title = driver.getTitle();
 		System.out.println(actual_Title);
 		String expected_Title = ExcelUtility.stringDataRead(0, 0, Constants.ADD_USER_PAGE_DATA);
@@ -50,10 +53,11 @@ public class AddUserPageTest extends Base
 		HomePage home = loginObj.clickOnLoginButton();
 		HomePage homeObj = new HomePage(driver);
 		homeObj.clickOnEndTourButton();
-		homeObj.clickOnUserManagementButton();
-		UsersPage user_page = homeObj.clickOnUserButton();
-		UsersPage userObj = new UsersPage(driver);
-		AddUserPage add_user_page = userObj.clickOnAddUserButton();
+		UserManagementPage user_manage = homeObj.clickOnUserManagementButton();
+		UserManagementPage user_ManagementObj = new UserManagementPage(driver);
+		UsersPage users_page = user_ManagementObj.clickOnUserButton();
+		UsersPage usersObj = new UsersPage(driver);
+		AddUserPage add_user_page = usersObj.clickOnAddUserButton();
 		
 		String firstName = RandomDataUtility.getFirstName();
 		String lastName = RandomDataUtility.getLastName();
@@ -75,9 +79,9 @@ public class AddUserPageTest extends Base
 		UsersPage user_pages = addUserPageObj.clickOnSaveButton();
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		userObj.enterEmailIdToSearchField(usersName);
+		usersObj.enterEmailIdToSearchField(usersName);
 		String actual_data = usersName;
-		String search_data = userObj.getSearchValue();
+		String search_data = usersObj.getSearchValue();
 		System.out.println(search_data );
 		Assert.assertEquals(actual_data, search_data, Messages.MISMAICH_WEBTABLE_DETAILS);
 	}
@@ -93,10 +97,11 @@ public class AddUserPageTest extends Base
 		HomePage home = loginObj.clickOnLoginButton();
 		HomePage homeObj = new HomePage(driver);
 		homeObj.clickOnEndTourButton();
-		homeObj.clickOnUserManagementButton();
-		UsersPage user_page = homeObj.clickOnUserButton();
-		UsersPage userObj = new UsersPage(driver);
-		AddUserPage add_user_page = userObj.clickOnAddUserButton();
+		UserManagementPage user_manage = homeObj.clickOnUserManagementButton();
+		UserManagementPage user_ManagementObj = new UserManagementPage(driver);
+		UsersPage users_page = user_ManagementObj.clickOnUserButton();
+		UsersPage usersObj = new UsersPage(driver);
+		AddUserPage add_user_page = usersObj.clickOnAddUserButton();
 		
 		String firstName = RandomDataUtility.getFirstName();
 		String lastName = RandomDataUtility.getLastName();
@@ -114,8 +119,8 @@ public class AddUserPageTest extends Base
 		UsersPage user_pages = addUserPageObj.clickOnSaveButton();
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		userObj.clickOnUserName();
-		LoginPage re_login = userObj.clickOnSignOutButton();
+		usersObj.clickOnUserName();
+		LoginPage re_login = usersObj.clickOnSignOutButton();
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		String username_re = usersName;

@@ -21,8 +21,7 @@ public class HomePage
 	WebElement login_Date;
 	@FindBy(xpath = "//span[text()='User Management']")
 	WebElement user_Management_dropdownButton;
-	@FindBy(xpath = "/html/body/div[2]/aside/section/ul/li[2]/ul/li[1]/a")
-	WebElement user;
+	
 	@FindBy(xpath = "//button[@class='btn btn-default btn-sm']")
 	WebElement application_Tour;
 	@FindBy(xpath = "//section[@class='content-header']")
@@ -47,15 +46,12 @@ public class HomePage
 	{
 		WebElementUtilities.clickOnElement(application_Tour);
 	}
-	public void clickOnUserManagementButton()
+	public UserManagementPage clickOnUserManagementButton()
 	{
 		WebElementUtilities.clickOnElement(user_Management_dropdownButton);
+		return new UserManagementPage(driver);
 	}
-	public UsersPage clickOnUserButton()
-	{
-		WebElementUtilities.clickOnElement(user);
-		return new UsersPage(driver);
-	}
+	
 	public String getUserName()
 	{
 		String login_name = WebElementUtilities.getText(welcome_name);

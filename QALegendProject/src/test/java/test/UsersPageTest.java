@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import pages.HomePage;
 import pages.LoginPage;
+import pages.UserManagementPage;
 import pages.UsersPage;
 
 public class UsersPageTest extends Base
@@ -27,9 +28,10 @@ public class UsersPageTest extends Base
 		HomePage home = loginObj.clickOnLoginButton();
 		HomePage homeObj = new HomePage(driver);
 		homeObj.clickOnEndTourButton();
-		homeObj.clickOnUserManagementButton();
-		UsersPage user_manage_page = homeObj.clickOnUserButton();
-		UsersPage userManageObj = new UsersPage(driver);
+		UserManagementPage user_manage = homeObj.clickOnUserManagementButton();
+		UserManagementPage user_ManagementObj = new UserManagementPage(driver);
+		UsersPage users_page = user_ManagementObj.clickOnUserButton();
+		UsersPage usersObj = new UsersPage(driver);
 		String actual_Title = driver.getTitle();
 		System.out.println(actual_Title);
 		String expected_Title = ExcelUtility.stringDataRead(3, 1, Constants.USERS_MANAGE_PAGE_DATA);
