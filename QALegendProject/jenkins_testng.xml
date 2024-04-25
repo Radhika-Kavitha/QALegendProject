@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Functional Suite">
+	<listeners>
+		<listener class-name="org.qalegend.listeners.Annotation_Transformer"></listener>
+	</listeners>
+	
 	<test name="Regression Test">
-
 		<classes>
 			<class name="test.LoginPageTest"/>
-			<class name="test.HomePageTest"/>
-			<class name="test.AddUserPageTest"/>
 		</classes>
 	</test>
-	
-	
 </suite>
