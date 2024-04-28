@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Functional Suite">
+	<test name="Regression Test">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="baseurl"
+			value="https://qalegend.com/billing/public/login" />
+		<classes>
+			<class name="test.LoginPageTest" />
+		</classes>
+	</test>
+
+	<test name="Smoke Test">
+		<parameter name="browser" value="Firefox" />
+		<parameter name="baseurl"
+			value="https://qalegend.com/billing/public/login" />
+		<classes>
+			<class name="test.UserManagementPageTest" />
+
+		</classes>
+	</test>
+
+	<test name="Sanity Test">
+		<parameter name="browser" value="Edge" />
+		<parameter name="baseurl"
+			value="https://qalegend.com/billing/public/login" />
+		<classes>
+			<class name="test.HomePageTest" />
+
+		</classes>
+	</test>
+
+</suite>

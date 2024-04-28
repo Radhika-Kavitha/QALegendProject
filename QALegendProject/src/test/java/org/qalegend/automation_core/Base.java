@@ -13,6 +13,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+
+
 
 public class Base 
 {
@@ -38,14 +41,15 @@ public class Base
 		driver.manage().window().maximize();
 	}
 	
-	@BeforeMethod
-	public void setUp()
+	@BeforeMethod(alwaysRun = true)
+	@Parameters({"browser", "baseurl"})
+	public void setUp(String browsername, String url)
 	{
-		initializeBrowser("Chrome");
-		driver.get("https://qalegend.com/billing/public/login");
+		initializeBrowser(browsername);
+		driver.get(url);
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void closeBrowser(ITestResult result) throws IOException
 	{
 		if(result.getStatus()==ITestResult.FAILURE)

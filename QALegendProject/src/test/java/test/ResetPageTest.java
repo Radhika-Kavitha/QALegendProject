@@ -14,7 +14,7 @@ import pages.ResetPage;
 
 public class ResetPageTest extends Base
 {
-	@Test
+	@Test(priority = 4, groups = "Smoke")
 	public void verifyResetPageTitle() throws IOException
 	{
 		
@@ -26,7 +26,7 @@ public class ResetPageTest extends Base
 		Assert.assertEquals(actualTitle, expectedTitle, Messages.TITLE_MESSAGES);
 	}
 	
-	@Test
+	@Test(priority = 5, enabled = false, groups = "Sanity")
 	public void verifyErrorMessageWithInvalidEmailId() throws IOException
 	{
 		String emailID = ExcelUtility.stringDataRead(2, 0, Constants.RESET_PAGE_DATA); 

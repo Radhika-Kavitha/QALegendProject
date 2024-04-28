@@ -17,7 +17,7 @@ import pages.UsersPage;
 
 public class UsersPageTest extends Base
 {
-	@Test
+	@Test(priority = 11, groups = "Smoke")
 	public void verifyUsersManagePageTitle() throws IOException
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);

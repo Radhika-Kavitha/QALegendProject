@@ -2,10 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Functional Suite">
 	<test name="Test">
-		
+		<parameter name="browser" value="Chrome" />
+		<parameter name="baseurl"
+			value="https://qalegend.com/billing/public/login" />
 		<classes>
-			<class name="test.LoginPageTest"/>
-			
+			<class name="test.LoginPageTest">
+				<methods>
+					<exclude name="verifyLoginPageTitle" />
+					<include
+						name="verifyErrorMessageWhileLoginWithInvalidCredentials" />
+				</methods>
+			</class>
 		</classes>
 	</test>
 </suite>

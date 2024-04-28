@@ -10,4 +10,5 @@ public class Messages
 	public static final String LOGIN_DATE_FAILED = "Login date verification failed";
 	public static final String MISMAICH_WEBTABLE_DETAILS = "Mismatch in webtable details";
 	public static final String RE_LOGIN_FAILED = "Re_Login failed";
+	public static final String USER_MANAGEMENT_OPTION_STATUS = "Options are not enebled";
 }

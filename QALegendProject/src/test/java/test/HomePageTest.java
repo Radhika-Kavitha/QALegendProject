@@ -14,7 +14,7 @@ import pages.LoginPage;
 
 public class HomePageTest extends Base
 {
-	@Test
+	@Test(priority = 6, groups = "Smoke")
 	public void verifyHomePageTitle() throws IOException
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
@@ -29,7 +29,7 @@ public class HomePageTest extends Base
 		Assert.assertEquals(actual_Title, expected_Title, Messages.TITLE_MESSAGES);
 	}
 	
-	@Test
+	@Test(priority = 7, groups = {"Sanity", "Regression"})
 	public void verifyUserLoginDate() throws IOException
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);

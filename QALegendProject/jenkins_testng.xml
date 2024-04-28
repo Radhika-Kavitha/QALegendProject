@@ -4,10 +4,10 @@
 	<listeners>
 		<listener class-name="org.qalegend.listeners.Annotation_Transformer"></listener>
 	</listeners>
-	
+
 	<test name="Regression Test">
 		<classes>
-			<class name="test.LoginPageTest"/>
+			<class name="test.LoginPageTest" />
 		</classes>
 	</test>
 </suite>

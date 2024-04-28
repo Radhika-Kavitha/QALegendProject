@@ -15,7 +15,7 @@ import pages.LoginPage;
 
 public class LoginPageTest extends Base
 {
-	@Test
+	@Test(priority = 1, groups = "Smoke")
 	public void verifyLoginPageTitle() throws IOException
 	{
 		String actualTitle = driver.getTitle();
@@ -24,7 +24,7 @@ public class LoginPageTest extends Base
 		Assert.assertEquals(actualTitle, expectedTitle, Messages.TITLE_MESSAGES);
 	}
 	
-	@Test
+	@Test(priority = 2, groups = "Sanity")
 	public void verifyUserLoginWithValidCredentials() throws IOException
 	{
 		String userName = ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
@@ -38,10 +38,9 @@ public class LoginPageTest extends Base
 		System.out.println(actual_userName);
 		String expected_userName =ExcelUtility.stringDataRead(0, 0, Constants.HOME_PAGE_DATA );
 		Assert.assertEquals(actual_userName, expected_userName, Messages.MISMAICH_HOMEUSERNAMES);
-		
 	}
 	
-	@Test(dataProvider = "InvalidUserCredentials", dataProviderClass = DataProviders.class)
+	@Test(priority = 3, groups = {"Sanity", "Regression"}, dataProvider = "InvalidUserCredentials", dataProviderClass = DataProviders.class)
 	public void verifyErrorMessageWhileLoginWithInvalidCredentials(String userName, String password) throws IOException
 	{
 		String expected_ErrorMessage = ExcelUtility.stringDataRead(5, 0, Constants.LOGIN_PAGE_DATA);
@@ -51,6 +50,5 @@ public class LoginPageTest extends Base
 		HomePage home = loginObj.clickOnLoginButton();
 		String actual_ErrorMessage = loginObj.getErrorMessage();
 		Assert.assertEquals(actual_ErrorMessage, expected_ErrorMessage, Messages.ERROR_MESSAGES);
-		
 	}
 }

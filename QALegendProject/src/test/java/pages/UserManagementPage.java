@@ -25,4 +25,19 @@ public class UserManagementPage
 		WebElementUtilities.clickOnElement(user);
 		return new UsersPage(driver);
 	}
+	public boolean isUserEnable()
+	{
+		boolean user_Status = WebElementUtilities.isElementEnabled(user);
+		return user_Status;
+	}
+	public boolean isRoleEnable()
+	{
+		boolean role_Status = WebElementUtilities.isElementEnabled(roles);
+		return role_Status;
+	}
+	public boolean isSaleEnable()
+	{
+		boolean sale_Status = WebElementUtilities.isElementEnabled(sales_commission_agents);
+		return sale_Status;
+	}
 }

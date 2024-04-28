@@ -18,11 +18,6 @@ public class WebElementUtilities
 	{
 		return element.getText();
 	}
-	public static boolean isElementSelected(WebElement element)
-	{
-		boolean status = element.isSelected();
-		return status;
-	}
 	public static boolean isClicked(WebElement element) 
 	{
 		try {
@@ -43,5 +38,10 @@ public class WebElementUtilities
 			js.executeScript("window.scrollBy(0,"+x+")");
 			x=x+2;
 		}
+	}
+	public static boolean isElementEnabled(WebElement element)
+	{
+		boolean status = element.isEnabled();
+		return status;
 	}
 }
