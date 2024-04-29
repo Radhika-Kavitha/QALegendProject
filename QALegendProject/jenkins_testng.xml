@@ -9,7 +9,13 @@
 
 	<test name="Regression Test">
 		<classes>
+			
+			<class name="test.LoginPageTest" />
+			<class name="test.ResetPageTest" />
 			<class name="test.HomePageTest" />
+			<class name="test.UserManagementPageTest" />
+			<class name="test.UsersPageTest" />
+			<class name="test.AddUserPageTest" />
 		</classes>
 	</test>
 </suite>

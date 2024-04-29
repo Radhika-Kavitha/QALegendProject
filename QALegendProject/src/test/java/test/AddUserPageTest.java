@@ -20,7 +20,7 @@ import pages.UsersPage;
 
 public class AddUserPageTest extends Base
 {
-	@Test(priority = 12, groups = "Smoke", retryAnalyzer = Retry_Analyzer.class)
+	@Test(priority = 12, groups = "Smoke")
 	public void verifyAddUserPageTitle() 
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
@@ -43,7 +43,7 @@ public class AddUserPageTest extends Base
 		Assert.assertEquals(actual_Title, expected_Title, Messages.TITLE_MESSAGES);
 	}
 	
-	@Test(priority = 13, groups = {"Sanity", "Regression"}, retryAnalyzer = Retry_Analyzer.class)
+	@Test(priority = 13, groups = {"Sanity", "Regression"})
 	public void verifyAddUser()  
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
@@ -87,7 +87,7 @@ public class AddUserPageTest extends Base
 		Assert.assertEquals(actual_data, search_data, Messages.MISMAICH_WEBTABLE_DETAILS);
 	}
 	
-	@Test(priority = 14, groups = {"Sanity", "Regression"}, retryAnalyzer = Retry_Analyzer.class)
+	@Test(priority = 14, groups = {"Sanity", "Regression"})
 	public void verifyUserLoginWithNewlyAddedUsers() 
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
