@@ -7,7 +7,7 @@
 
 	<test name="Regression Test">
 		<classes>
-			<class name="test.LoginPageTest" />
+			<class name="test.HomePageTest" />
 		</classes>
 	</test>
 </suite>

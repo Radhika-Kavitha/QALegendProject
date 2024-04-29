@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.qalegend.automation_core.Base;
 import org.qalegend.constants.Constants;
 import org.qalegend.constants.Messages;
+import org.qalegend.listeners.Retry_Analyzer;
 import org.qalegend.utilities.ExcelUtility;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -29,7 +30,7 @@ public class HomePageTest extends Base
 		Assert.assertEquals(actual_Title, expected_Title, Messages.TITLE_MESSAGES);
 	}
 	
-	@Test(priority = 7, groups = {"Sanity", "Regression"})
+	@Test(priority = 7, groups = {"Sanity", "Regression"}, retryAnalyzer = Retry_Analyzer.class)
 	public void verifyUserLoginDate() 
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
