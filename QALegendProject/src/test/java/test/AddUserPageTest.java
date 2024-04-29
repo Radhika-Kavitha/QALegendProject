@@ -21,7 +21,7 @@ import pages.UsersPage;
 public class AddUserPageTest extends Base
 {
 	@Test(priority = 12, groups = "Smoke", retryAnalyzer = Retry_Analyzer.class)
-	public void verifyAddUserPageTitle() throws IOException
+	public void verifyAddUserPageTitle() 
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
 		String password = ExcelUtility.integerDataRead(3, 0, Constants.LOGIN_PAGE_DATA);
@@ -44,7 +44,7 @@ public class AddUserPageTest extends Base
 	}
 	
 	@Test(priority = 13, groups = {"Sanity", "Regression"}, retryAnalyzer = Retry_Analyzer.class)
-	public void verifyAddUser() throws IOException 
+	public void verifyAddUser()  
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
 		String password = ExcelUtility.integerDataRead(3, 0, Constants.LOGIN_PAGE_DATA);
@@ -88,7 +88,7 @@ public class AddUserPageTest extends Base
 	}
 	
 	@Test(priority = 14, groups = {"Sanity", "Regression"}, retryAnalyzer = Retry_Analyzer.class)
-	public void verifyUserLoginWithNewlyAddedUsers() throws IOException
+	public void verifyUserLoginWithNewlyAddedUsers() 
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
 		String password = ExcelUtility.integerDataRead(3, 0, Constants.LOGIN_PAGE_DATA);
@@ -106,7 +106,7 @@ public class AddUserPageTest extends Base
 		
 		String firstName = RandomDataUtility.getFirstName();
 		String lastName = RandomDataUtility.getLastName();
-		String emailId = firstName+"."+lastName+"78@yahoo.com";
+		String emailId = firstName+"."+lastName+"7823@yahoo.com";
 		String passwords = firstName+"."+lastName;
 		String usersName = firstName+"."+lastName;
 					

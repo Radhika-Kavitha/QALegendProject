@@ -16,16 +16,16 @@ import pages.LoginPage;
 public class LoginPageTest extends Base
 {
 	@Test(priority = 1, groups = "Smoke")
-	public void verifyLoginPageTitle() throws IOException
+	public void verifyLoginPageTitle() 
 	{
 		String actualTitle = driver.getTitle();
 		System.out.println(actualTitle);
-		String expectedTitle = ExcelUtility.stringDataRead(0, 0, Constants.LOGIN_PAGE_DATA);
+		String expectedTitle = ExcelUtility.stringDataRead(0, 0, Constants.LOGIN_PAGE_DATA)+"kh";
 		Assert.assertEquals(actualTitle, expectedTitle, Messages.TITLE_MESSAGES);
 	}
 	
 	@Test(priority = 2, groups = "Sanity")
-	public void verifyUserLoginWithValidCredentials() throws IOException
+	public void verifyUserLoginWithValidCredentials() 
 	{
 		String userName = ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
 		String password = ExcelUtility.integerDataRead(3, 0, Constants.LOGIN_PAGE_DATA);
@@ -41,7 +41,7 @@ public class LoginPageTest extends Base
 	}
 	
 	@Test(priority = 3, groups = {"Sanity", "Regression"}, dataProvider = "InvalidUserCredentials", dataProviderClass = DataProviders.class)
-	public void verifyErrorMessageWhileLoginWithInvalidCredentials(String userName, String password) throws IOException
+	public void verifyErrorMessageWhileLoginWithInvalidCredentials(String userName, String password) 
 	{
 		String expected_ErrorMessage = ExcelUtility.stringDataRead(5, 0, Constants.LOGIN_PAGE_DATA);
 		LoginPage loginObj = new LoginPage(driver);

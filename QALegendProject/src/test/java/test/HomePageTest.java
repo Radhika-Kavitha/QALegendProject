@@ -15,7 +15,7 @@ import pages.LoginPage;
 public class HomePageTest extends Base
 {
 	@Test(priority = 6, groups = "Smoke")
-	public void verifyHomePageTitle() throws IOException
+	public void verifyHomePageTitle() 
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
 		String password = ExcelUtility.integerDataRead(3, 0, Constants.LOGIN_PAGE_DATA);
@@ -30,7 +30,7 @@ public class HomePageTest extends Base
 	}
 	
 	@Test(priority = 7, groups = {"Sanity", "Regression"})
-	public void verifyUserLoginDate() throws IOException
+	public void verifyUserLoginDate() 
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
 		String password = ExcelUtility.integerDataRead(3, 0, Constants.LOGIN_PAGE_DATA);

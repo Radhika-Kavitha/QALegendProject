@@ -15,7 +15,7 @@ import pages.ResetPage;
 public class ResetPageTest extends Base
 {
 	@Test(priority = 4, groups = "Smoke")
-	public void verifyResetPageTitle() throws IOException
+	public void verifyResetPageTitle() 
 	{
 		
 		LoginPage loginObj = new LoginPage(driver);
@@ -27,7 +27,7 @@ public class ResetPageTest extends Base
 	}
 	
 	@Test(priority = 5, enabled = false, groups = "Sanity")
-	public void verifyErrorMessageWithInvalidEmailId() throws IOException
+	public void verifyErrorMessageWithInvalidEmailId() 
 	{
 		String emailID = ExcelUtility.stringDataRead(2, 0, Constants.RESET_PAGE_DATA); 
 		LoginPage loginObj = new LoginPage(driver);

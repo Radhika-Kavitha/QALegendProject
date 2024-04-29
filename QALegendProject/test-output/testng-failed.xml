@@ -8,14 +8,14 @@
     <parameter name="baseurl" value="https://qalegend.com/billing/public/login"/>
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="test.AddUserPageTest">
+      <class name="test.LoginPageTest">
         <methods>
           <include name="closeBrowser"/>
+          <include name="verifyErrorMessageWhileLoginWithInvalidCredentials" invocation-numbers="2 2 2 2"/>
+          <include name="verifyLoginPageTitle"/>
           <include name="setUp"/>
-          <include name="verifyAddUser"/>
-          <include name="verifyUserLoginWithNewlyAddedUsers"/>
         </methods>
-      </class> <!-- test.AddUserPageTest -->
+      </class> <!-- test.LoginPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Functional Suite] -->

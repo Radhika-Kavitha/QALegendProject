@@ -6,13 +6,10 @@
 		<parameter name="baseurl"
 			value="https://qalegend.com/billing/public/login" />
 		<classes>
-			<class name="test.LoginPageTest">
-				<methods>
-					<exclude name="verifyLoginPageTitle" />
-					<include
-						name="verifyErrorMessageWhileLoginWithInvalidCredentials" />
-				</methods>
-			</class>
+			
+			<class name="test.AddUserPageTest" />
+				
+			
 		</classes>
 	</test>
 </suite>

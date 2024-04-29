@@ -16,8 +16,10 @@ public class ExcelUtility
 	static XSSFSheet sh; //sheet read
 	
 	//to read string data from excel
-	public static String stringDataRead(int row, int col, String sheetName) throws IOException
-	{				//Create an Instance of the Workbook Class and Open the Excel File
+	public static String stringDataRead(int row, int col, String sheetName) 
+	{	
+		try {
+		//Create an Instance of the Workbook Class and Open the Excel File
 		f=new FileInputStream(Constants.TEST_DATA_EXCELPATH);
 		wb = new XSSFWorkbook(f);
 					//Get the Desired Sheet from the Workbook
@@ -26,10 +28,16 @@ public class ExcelUtility
 		XSSFRow r = sh.getRow(row);
 		XSSFCell c = r.getCell(col);
 		return c.getStringCellValue();
+		}catch(Exception e)
+		{
+			throw new RuntimeException("TestData excel sheet not found");
+			
+		}
 	}
 	//to read integer data from excel
-	public static String integerDataRead(int row, int col, String sheetName) throws IOException
+	public static String integerDataRead(int row, int col, String sheetName)
 	{
+		try {
 		f=new FileInputStream(Constants.TEST_DATA_EXCELPATH);
 		wb = new XSSFWorkbook(f);
 		sh =wb.getSheet(sheetName);
@@ -37,5 +45,10 @@ public class ExcelUtility
 		XSSFCell c= r.getCell(col);
 		int a= (int) c.getNumericCellValue();
 		return String.valueOf(a);
+		}catch(Exception e)
+		{
+			throw new RuntimeException("TestData excel sheet not found");
+			
+		}
 	}
 }

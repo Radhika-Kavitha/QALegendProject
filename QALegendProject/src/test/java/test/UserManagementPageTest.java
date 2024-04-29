@@ -17,7 +17,7 @@ import pages.UserManagementPage;
 public class UserManagementPageTest extends Base
 {
 	@Test(priority = 8, groups = {"Sanity", "Regression"})
-	public void verifyUsersManagementOption() throws IOException
+	public void verifyUsersManagementOption() 
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
 		String password = ExcelUtility.integerDataRead(3, 0, Constants.LOGIN_PAGE_DATA);
@@ -35,7 +35,7 @@ public class UserManagementPageTest extends Base
 	}
 	
 	@Test(priority = 9, groups = {"Smoke", "Regression"})
-	public void verifyRolesManagementOption() throws IOException
+	public void verifyRolesManagementOption() 
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
 		String password = ExcelUtility.integerDataRead(3, 0, Constants.LOGIN_PAGE_DATA);
@@ -53,7 +53,7 @@ public class UserManagementPageTest extends Base
 	}
 	
 	@Test(priority = 10, groups = {"Sanity", "Regression"})
-	public void verifySalesManagementOption() throws IOException
+	public void verifySalesManagementOption() 
 	{
 		String userName =ExcelUtility.stringDataRead(2, 0, Constants.LOGIN_PAGE_DATA);
 		String password = ExcelUtility.integerDataRead(3, 0, Constants.LOGIN_PAGE_DATA);
