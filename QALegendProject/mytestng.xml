@@ -7,7 +7,7 @@
 			value="https://qalegend.com/billing/public/login" />
 		<classes>
 			
-			<class name="test.AddUserPageTest" />
+			<class name="test.HomePageTest" />
 				
 			
 		</classes>
