@@ -1,8 +1,5 @@
 package test;
 
-import java.io.IOException;
-import java.time.Duration;
-
 import org.qalegend.automation_core.Base;
 import org.qalegend.constants.Constants;
 import org.qalegend.constants.Messages;

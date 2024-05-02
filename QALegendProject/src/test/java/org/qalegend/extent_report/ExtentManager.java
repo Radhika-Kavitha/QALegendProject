@@ -26,7 +26,6 @@ public class ExtentManager
         return extent;
     }
 
-   
     public static ExtentReports createInstance()
     {
         platform = getCurrentPlatform();
@@ -45,7 +44,6 @@ public class ExtentManager
         return extent;
     }
 
-   
     private static String getReportFileLocation(Platform platform) 
     {
         String reportFileLocation = null;
@@ -68,7 +66,6 @@ public class ExtentManager
         return reportFileLocation;
     }
 
-    
     private static void createReportPath(String path) 
     {
         File testDirectory = new File(path);
@@ -87,7 +84,6 @@ public class ExtentManager
         }
     }
 
-    
     private static Platform getCurrentPlatform()
     {
         if (platform == null) 

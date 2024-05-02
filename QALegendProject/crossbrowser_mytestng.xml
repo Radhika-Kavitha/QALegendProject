@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Functional Suite">
+	<listeners>
+		<listener class-name="org.qalegend.listeners.Annotation_Transformer" />
+	</listeners>
 	<test name="Chrome Test">
 		<parameter name="browser" value="Chrome" />
 		<parameter name="baseurl"
@@ -15,8 +18,7 @@
 		<parameter name="baseurl"
 			value="https://qalegend.com/billing/public/login" />
 		<classes>
-			<class name="test.UserManagementPageTest" />
-
+			<class name="test.LoginPageTest" />
 		</classes>
 	</test>
 
@@ -25,8 +27,7 @@
 		<parameter name="baseurl"
 			value="https://qalegend.com/billing/public/login" />
 		<classes>
-			<class name="test.HomePageTest" />
-
+			<class name="test.LoginPageTest" />
 		</classes>
 	</test>
 
