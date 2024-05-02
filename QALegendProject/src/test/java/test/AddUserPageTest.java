@@ -9,6 +9,7 @@ import org.qalegend.constants.Messages;
 import org.qalegend.listeners.Retry_Analyzer;
 import org.qalegend.utilities.ExcelUtility;
 import org.qalegend.utilities.RandomDataUtility;
+import org.qalegend.utilities.WaitUtility;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -29,12 +30,15 @@ public class AddUserPageTest extends Base
 		loginObj.enterUserName(userName);
 		loginObj.enterPassword(password);
 		HomePage home = loginObj.clickOnLoginButton();
+		
 		HomePage homeObj = new HomePage(driver);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		WaitUtility.waitUsingImplicityWait(driver);
 		homeObj.clickOnEndTourButton();
 		UserManagementPage user_manage = homeObj.clickOnUserManagementButton();
+		
 		UserManagementPage user_ManagementObj = new UserManagementPage(driver);
 		UsersPage users_page = user_ManagementObj.clickOnUserButton();
+		
 		UsersPage usersObj = new UsersPage(driver);
 		AddUserPage add_user_page = usersObj.clickOnAddUserButton();
 		String actual_Title = driver.getTitle();
@@ -52,11 +56,14 @@ public class AddUserPageTest extends Base
 		loginObj.enterUserName(userName);
 		loginObj.enterPassword(password);
 		HomePage home = loginObj.clickOnLoginButton();
+		
 		HomePage homeObj = new HomePage(driver);
 		homeObj.clickOnEndTourButton();
 		UserManagementPage user_manage = homeObj.clickOnUserManagementButton();
+		
 		UserManagementPage user_ManagementObj = new UserManagementPage(driver);
 		UsersPage users_page = user_ManagementObj.clickOnUserButton();
+		
 		UsersPage usersObj = new UsersPage(driver);
 		AddUserPage add_user_page = usersObj.clickOnAddUserButton();
 		
@@ -66,20 +73,17 @@ public class AddUserPageTest extends Base
 		String passwords = firstName+"."+lastName;
 		String usersName = firstName+"."+lastName;
 				
-		//String prefixName = ExcelUtility.stringDataRead(2, 0, Constants.ADD_USER_PAGE_DATA);
-		//String salesCommisionPercentageField = ExcelUtility.integerDataRead(3, 3, Constants.ADD_USER_PAGE_DATA);
+		
 		AddUserPage addUserPageObj = new AddUserPage(driver);
-		//addUserPageObj.enterPrefixName(prefixName);
 		addUserPageObj.enterFirstName(firstName);
 		addUserPageObj.enterLastName(lastName);
 		addUserPageObj.enterEmailID(emailId);
 		addUserPageObj.enterUserName(usersName);
 		addUserPageObj.enterPassword(passwords);
 		addUserPageObj.enterConfirmPassword(passwords);
-		//addUserPageObj.entersalesCommisionPercentage(salesCommisionPercentageField);
-		UsersPage user_pages = addUserPageObj.clickOnSaveButton();
 		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		UsersPage user_pages = addUserPageObj.clickOnSaveButton();
+		WaitUtility.waitUsingImplicityWait(driver);
 		usersObj.enterEmailIdToSearchField(usersName);
 		String actual_data = usersName;
 		String search_data = usersObj.getSearchValue();
@@ -96,11 +100,14 @@ public class AddUserPageTest extends Base
 		loginObj.enterUserName(userName);
 		loginObj.enterPassword(password);
 		HomePage home = loginObj.clickOnLoginButton();
+		
 		HomePage homeObj = new HomePage(driver);
 		homeObj.clickOnEndTourButton();
 		UserManagementPage user_manage = homeObj.clickOnUserManagementButton();
+		
 		UserManagementPage user_ManagementObj = new UserManagementPage(driver);
 		UsersPage users_page = user_ManagementObj.clickOnUserButton();
+		
 		UsersPage usersObj = new UsersPage(driver);
 		AddUserPage add_user_page = usersObj.clickOnAddUserButton();
 		
@@ -119,11 +126,11 @@ public class AddUserPageTest extends Base
 		addUserPageObj.enterConfirmPassword(passwords);
 		UsersPage user_pages = addUserPageObj.clickOnSaveButton();
 		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		WaitUtility.waitUsingImplicityWait(driver);
 		usersObj.clickOnUserName();
 		LoginPage re_login = usersObj.clickOnSignOutButton();
 		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		WaitUtility.waitUsingImplicityWait(driver);
 		String username_re = usersName;
 		String password_re = passwords;
 		loginObj.enterUserName(usersName);

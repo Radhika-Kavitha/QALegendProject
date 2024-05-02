@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Functional Suite">
 	<listeners>
-		<listener class-name="org.qalegend.listeners.Extent_Listeners"/>
+		<listener class-name="org.qalegend.listeners.Extent_Listeners" />
 	</listeners>
 	<test name="Test">
 		<parameter name="browser" value="Chrome" />

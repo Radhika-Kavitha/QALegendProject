@@ -26,11 +26,13 @@ public class UsersPageTest extends Base
 		loginObj.enterUserName(userName);
 		loginObj.enterPassword(password);
 		HomePage home = loginObj.clickOnLoginButton();
+		
 		HomePage homeObj = new HomePage(driver);
 		homeObj.clickOnEndTourButton();
 		UserManagementPage user_manage = homeObj.clickOnUserManagementButton();
 		UserManagementPage user_ManagementObj = new UserManagementPage(driver);
 		UsersPage users_page = user_ManagementObj.clickOnUserButton();
+		
 		UsersPage usersObj = new UsersPage(driver);
 		String actual_Title = driver.getTitle();
 		System.out.println(actual_Title);

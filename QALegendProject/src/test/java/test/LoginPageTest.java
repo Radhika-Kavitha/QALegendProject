@@ -7,6 +7,7 @@ import org.qalegend.constants.Constants;
 import org.qalegend.constants.Messages;
 import org.qalegend.dataprovider.DataProviders;
 import org.qalegend.utilities.ExcelUtility;
+import org.qalegend.utilities.WaitUtility;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -34,6 +35,7 @@ public class LoginPageTest extends Base
 		loginObj.enterPassword(password);
 		HomePage home_page = loginObj.clickOnLoginButton();
 		HomePage homeObj = new HomePage(driver);
+		WaitUtility.waitUsingImplicityWait(driver);
 		String actual_userName = homeObj.getHomeName();
 		System.out.println(actual_userName);
 		String expected_userName =ExcelUtility.stringDataRead(0, 0, Constants.HOME_PAGE_DATA );

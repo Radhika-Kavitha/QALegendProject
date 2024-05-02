@@ -43,6 +43,5 @@ public class HomePageTest extends Base
 		String actual_logindate = homeObj.getLoginDate();
 		String expected_logindate = homeObj.getCurrentDate();
 		Assert.assertEquals(actual_logindate, expected_logindate, Messages.LOGIN_DATE_FAILED);
-		
 	}
 }

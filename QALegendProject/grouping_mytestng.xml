@@ -4,6 +4,8 @@
 	<groups>
 		<run>
 			<include name="Sanity" />
+			<include name="Smoke" />
+			<include name="Regression" />
 		</run>
 	</groups>
 	<test name="Regression Test">

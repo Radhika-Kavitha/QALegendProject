@@ -7,6 +7,7 @@ import org.qalegend.automation_core.Base;
 import org.qalegend.constants.Constants;
 import org.qalegend.constants.Messages;
 import org.qalegend.utilities.ExcelUtility;
+import org.qalegend.utilities.WaitUtility;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,8 +26,9 @@ public class UserManagementPageTest extends Base
 		loginObj.enterUserName(userName);
 		loginObj.enterPassword(password);
 		HomePage home = loginObj.clickOnLoginButton();
+		
 		HomePage homeObj = new HomePage(driver);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		WaitUtility.waitUsingImplicityWait(driver);
 		homeObj.clickOnEndTourButton();
 		UserManagementPage user_manage = homeObj.clickOnUserManagementButton();
 		UserManagementPage user_ManagementObj = new UserManagementPage(driver);
@@ -43,8 +45,9 @@ public class UserManagementPageTest extends Base
 		loginObj.enterUserName(userName);
 		loginObj.enterPassword(password);
 		HomePage home = loginObj.clickOnLoginButton();
+		
 		HomePage homeObj = new HomePage(driver);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		WaitUtility.waitUsingImplicityWait(driver);
 		homeObj.clickOnEndTourButton();
 		UserManagementPage user_manage = homeObj.clickOnUserManagementButton();
 		UserManagementPage user_ManagementObj = new UserManagementPage(driver);
@@ -61,8 +64,9 @@ public class UserManagementPageTest extends Base
 		loginObj.enterUserName(userName);
 		loginObj.enterPassword(password);
 		HomePage home = loginObj.clickOnLoginButton();
+		
 		HomePage homeObj = new HomePage(driver);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		WaitUtility.waitUsingImplicityWait(driver);
 		homeObj.clickOnEndTourButton();
 		UserManagementPage user_manage = homeObj.clickOnUserManagementButton();
 		UserManagementPage user_ManagementObj = new UserManagementPage(driver);

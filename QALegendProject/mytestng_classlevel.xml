@@ -6,9 +6,11 @@
 		<parameter name="baseurl"
 			value="https://qalegend.com/billing/public/login" />
 		<classes>
-			<class name="test.LoginPageTest" />
-
-
+			<class name="test.LoginPageTest">
+				<methods>
+					<include name="verifyUserLoginWithValidCredentials" />
+				</methods>
+			</class>
 		</classes>
 	</test>
 

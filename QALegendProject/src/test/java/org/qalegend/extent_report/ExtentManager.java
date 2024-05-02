@@ -19,14 +19,16 @@ public class ExtentManager
     private static final String macReportFileLoc = macPath + "/" + reportFileName;
     private static final String winReportFileLoc = windowsPath + "\\" + reportFileName;
 
-    public static ExtentReports getInstance() {
+    public static ExtentReports getInstance() 
+    {
         if (extent == null)
             createInstance();
         return extent;
     }
 
-    //Create an extent report instance
-    public static ExtentReports createInstance() {
+   
+    public static ExtentReports createInstance()
+    {
         platform = getCurrentPlatform();
         String fileName = getReportFileLocation(platform);
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
@@ -43,10 +45,12 @@ public class ExtentManager
         return extent;
     }
 
-    //Select the extent report file location based on platform
-    private static String getReportFileLocation(Platform platform) {
+   
+    private static String getReportFileLocation(Platform platform) 
+    {
         String reportFileLocation = null;
-        switch (platform) {
+        switch (platform) 
+        {
             case MAC:
                 reportFileLocation = macReportFileLoc;
                 createReportPath(macPath);
@@ -64,30 +68,40 @@ public class ExtentManager
         return reportFileLocation;
     }
 
-    //Create the report path if it does not exist
-    private static void createReportPath(String path) {
+    
+    private static void createReportPath(String path) 
+    {
         File testDirectory = new File(path);
-        if (!testDirectory.exists()) {
-            if (testDirectory.mkdir()) {
+        if (!testDirectory.exists()) 
+        {
+            if (testDirectory.mkdir()) 
+            {
                 System.out.println("Directory: " + path + " is created!");
-            } else {
+            } else 
+            {
                 System.out.println("Failed to create directory: " + path);
             }
-        } else {
+        } else 
+        {
             System.out.println("Directory already exists: " + path);
         }
     }
 
-    //Get current platform
-    private static Platform getCurrentPlatform() {
-        if (platform == null) {
+    
+    private static Platform getCurrentPlatform()
+    {
+        if (platform == null) 
+        {
             String operSys = System.getProperty("os.name").toLowerCase();
-            if (operSys.contains("win")) {
+            if (operSys.contains("win")) 
+            {
                 platform = Platform.WINDOWS;
             } else if (operSys.contains("nix") || operSys.contains("nux")
-                    || operSys.contains("aix")) {
+                    || operSys.contains("aix")) 
+            {
                 platform = Platform.LINUX;
-            } else if (operSys.contains("mac")) {
+            } else if (operSys.contains("mac")) 
+            {
                 platform = Platform.MAC;
             }
         }
