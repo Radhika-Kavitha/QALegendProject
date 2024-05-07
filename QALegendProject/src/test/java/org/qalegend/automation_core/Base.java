@@ -44,7 +44,8 @@ public class Base
 	}
 	
 	@BeforeMethod(alwaysRun = true)
-	@Parameters({"browser", "baseurl"})
+	//@Parameters({"browser", "baseurl"})
+	@Parameters("browser")
 	public void setUp(String browsername, String url)
 	{
 		initializeBrowser(browsername);
